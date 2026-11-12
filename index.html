@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshVeg - Veggie Dashboard & Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= AUTH CONTAINER ================= -->
+    <div id="auth-container" class="auth-wrapper">
+        
+        <!-- LOGIN CARD -->
+        <div id="login-card" class="auth-card">
+            <h2>Welcome Back to <span class="brand-text">FreshVeg</span></h2>
+            <p class="subtitle">Log in to manage your fresh inventory</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#" id="to-register">Register here</a></p>
+        </div>
+
+        <!-- REGISTRATION CARD -->
+        <div id="register-card" class="auth-card hidden">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join our fresh grocery network today</p>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="example@mail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" placeholder="Create a secure password" required>
+                </div>
+                <button type="submit" class="btn-primary">Register Now</button>
+            </form>
+            <p class="auth-switch">Already registered? <a href="#" id="to-login">Log in here</a></p>
+        </div>
+    </div>
+
+    <!-- ================= DASHBOARD CONTAINER ================= -->
+    <div id="dashboard-container" class="dashboard-wrapper hidden">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">🥦 FreshVeg Admin</div>
+            <nav class="sidebar-menu">
+                <a href="#" class="active">📊 Overview</a>
+                <a href="#">🥕 Products</a>
+                <a href="#">📦 Orders</a>
+            </nav>
+            <button id="logout-btn" class="btn-logout">Logout 🚪</button>
+        </aside>
+
+        <!-- Main Panel Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Welcome Back, <span id="user-display-name">User</span>!</h1>
+                <p id="current-date"></p>
+            </header>
+
+            <!-- Stats Analytics Widget Banner -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Veggie Items</h3>
+                    <p class="stat-value">1,240 kg</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Orders</h3>
+                    <p class="stat-value">42 Pending</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Revenue</h3>
+                    <p class="stat-value">₹24,500</p>
+                </div>
+            </section>
+
+            <!-- Inventory Display Section -->
+            <section class="inventory-section">
+                <h2>Live Vegetable Stock</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Category</th>
+                                <th>Stock Status</th>
+                                <th>Price per kg</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🍅 Organic Tomatoes</td>
+                                <td>Fruit Vegetables</td>
+                                <td><span class="badge stock-high">In Stock</span></td>
+                                <td>₹40.00</td>
+                            </tr>
+                            <tr>
+                                <td>🥕 Fresh Carrots</td>
+                                <td>Root Vegetables</td>
+                                <td><span class="badge stock-high">In Stock</span></td>
+                                <td>₹60.00</td>
+                            </tr>
+                            <tr>
+                                <td>🥦 Green Broccoli</td>
+                                <td>Cruciferous</td>
+                                <td><span class="badge stock-low">Low Stock</span></td>
+                                <td>₹120.00</td>
+                            </tr>
+                            <tr>
+                                <td>🥔 Local Potatoes</td>
+                                <td>Tubers</td>
+                                <td><span class="badge stock-high">In Stock</span></td>
+                                <td>₹30.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
